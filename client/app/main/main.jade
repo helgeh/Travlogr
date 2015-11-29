@@ -2,6 +2,6 @@ div(ng-include='"components/navbar/navbar.html"')
 
 div.wrapper
 
-  div#map_canvas.map_canvas
+  ui-gmap-google-map(center='map.center', zoom='map.zoom')
 
   div#ui_layer(data-panels='true')

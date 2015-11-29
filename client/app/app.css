@@ -44,7 +44,8 @@
     width: 100%;*/
 }
 
-html, body, div[ng-view], .wrapper, .map_canvas {
+html, body, div[ng-view], .wrapper, .map_canvas,
+ui-gmap-google-map, .angular-google-map, .angular-google-map-container {
     height: 100%;
 }
 

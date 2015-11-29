@@ -5,9 +5,11 @@ angular.module('travlogrApp')
     
   	// var map; we don't really need a reference to the map here, let Gmaps do the work
 
+    $scope.map = { center: { latitude: 38.267, longitude: 13.406 }, zoom: 3 };
+
   	Gmaps.getMap().then(function (map) {
   		// map = map;
-  		initTravelDestinations();
+  		// initTravelDestinations();
 
       //open testmenu panel
       // panels.open("right_panel");

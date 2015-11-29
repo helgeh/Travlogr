@@ -8,12 +8,12 @@ angular.module('travlogrApp')
     deferred = $q.defer();
     promise = deferred.promise;
 
-    GoogleMapsLoader.load(function(ggl) {
-        google = ggl;
-        setupIcons();
-        var id = addMap();
-        deferred.resolve(maps[id].map);
-    });
+    // GoogleMapsLoader.load(function(ggl) {
+    //     google = ggl;
+    //     setupIcons();
+    //     var id = addMap();
+    //     deferred.resolve(maps[id].map);
+    // });
 
     function setupIcons() {
       icons = {

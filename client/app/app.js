@@ -10,7 +10,8 @@ angular.module('travlogrApp', [
   'ngSanitize',
   'ngRoute',
   'ui.bootstrap',
-  'angular.panels'
+  'angular.panels',
+  'uiGmapgoogle-maps'
 ])
   .config(function ($routeProvider, $locationProvider, panelsProvider) {
     $routeProvider
@@ -19,6 +20,14 @@ angular.module('travlogrApp', [
       });
 
     $locationProvider.html5Mode(true);
+  })
+
+  .config(function(uiGmapGoogleMapApiProvider) {
+    uiGmapGoogleMapApiProvider.configure({
+        //    key: 'your api key',
+        v: '3.20', //defaults to latest 3.X anyhow
+        libraries: 'weather,geometry,visualization'
+    });
   })
 
   .constant('CONFIG', {
