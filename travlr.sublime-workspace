@@ -1,0 +1,540 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "client/app/app.js",
+			"settings":
+			{
+				"buffer_size": 434,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "'use strict';\n\nangular.module('travlogrApp')\n  .config(function (panelsProvider) {\n	panelsProvider\n	.add({\n	    id: \"right_panel\",\n	    position: \"right\",\n	    size: \"200px\",\n	    templateUrl: \"app/main/ui/right_panel.html\",\n	    controller: \"rightpanelCtrl\"\n	// })\n	// .add({\n	//     id: \"testpanel\",\n	//     position: \"right\",\n	//     size: \"80%\",\n	//     templateUrl: \"../resources/template/testpanel.html\",\n	//     controller: \"testpanelCtrl\",\n	//     closeCallbackFunction: \"testpanelClose\"\n	});\n  });",
+			"file": "client/app/main/ui/ui.js",
+			"file_size": 524,
+			"file_write_time": 130924361707783719,
+			"settings":
+			{
+				"buffer_size": 506,
+				"line_ending": "Windows",
+				"name": "'use strict';"
+			}
+		},
+		{
+			"file": "client/app/main/ui/right_panel.jade",
+			"settings":
+			{
+				"buffer_size": 23,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "'use strict'\n\nangular.module('travlogrApp')\n.controller('rightpanelCtrl', function($scope) {\n\n    //left panel controller\n\n});",
+			"file": "client/app/main/ui/ui.controllers.js",
+			"file_size": 131,
+			"file_write_time": 130924363564350246,
+			"settings":
+			{
+				"buffer_size": 126,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "client/app/main/main.jade",
+			"settings":
+			{
+				"buffer_size": 128,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "'use strict';\n\nangular.module('travlogrApp')\n  .controller('MainCtrl', function ($scope, $http, CONFIG, Gmaps, panels, $q) {\n    \n  	// var map; we don't really need a reference to the map here, let Gmaps do the work\n\n  	Gmaps.getMap().then(function (map) {\n  		// map = map;\n  		initTravelDestinations();\n  	});\n\n  	function initTravelDestinations() {\n  		Gmaps.addPoint('52.3702157', '4.895167899999933');\n\n	    //open testmenu panel\n	    panels.open(\"right_panel\");\n  	}\n\n  });\n",
+			"file": "client/app/main/main.controller.js",
+			"file_size": 478,
+			"file_write_time": 130924332972635453,
+			"settings":
+			{
+				"buffer_size": 481,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 2595,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".yo-rc.json",
+			"settings":
+			{
+				"buffer_size": 1137,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 81.0,
+		"last_filter": "install pack",
+		"selected_items":
+		[
+			[
+				"install pack",
+				"Package Control: Install Package"
+			],
+			[
+				"package control install package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/Helge/travlr",
+		"/D/Helge/travlr/client",
+		"/D/Helge/travlr/client/app",
+		"/D/Helge/travlr/client/app/Gmaps",
+		"/D/Helge/travlr/client/app/main",
+		"/D/Helge/travlr/client/app/main/ui",
+		"/D/Helge/travlr/client/components"
+	],
+	"file_history":
+	[
+		"/D/Helge/travlr/client/app/main/main.js",
+		"/D/Helge/travlr/Gruntfile.js",
+		"/D/Helge/travlr/client/components/navbar/navbar.jade",
+		"/D/Helge/travlr/client/app/Gmaps/Gmaps.service.js",
+		"/D/Helge/travlr/client/index.html",
+		"/C/Users/Lilja/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/D/Helge/travlr/client/bower_components/angular.panels/src/angular.panels.js",
+		"/D/Helge/travlr/client/app/app.css",
+		"/D/Helge/travlr/bower.json",
+		"/D/Helge/travlr/client/app/main/main.controller.spec.js",
+		"/D/Helge/travlr/npm-debug.log",
+		"/D/Helge/travlr/package.json",
+		"/D/Helge/travlr/travlr.sublime-workspace",
+		"/D/Helge/cmder/vendor/profile.ps1",
+		"/D/Helge/my-site/app/scripts/app.js"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"bower",
+			"map",
+			":",
+			"config",
+			"CONFIG",
+			"config",
+			"options",
+			"defaults",
+			"mapId",
+			"id",
+			"mapControllers",
+			"options"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "D:\\Helge\\travlr"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 7,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "client/app/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 434,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								325,
+								325
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "client/app/main/ui/ui.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 506,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								253,
+								253
+							]
+						],
+						"settings":
+						{
+							"auto_name": "'use strict';",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "client/app/main/ui/right_panel.jade",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								23,
+								23
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "client/app/main/ui/ui.controllers.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 126,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								67,
+								67
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "client/app/main/main.jade",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 128,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								127,
+								127
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "client/app/main/main.controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 481,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14,
+								14
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2595,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								559,
+								559
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": ".yo-rc.json",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1137,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"main",
+				"client\\app\\main\\main.jade"
+			],
+			[
+				"index",
+				"client\\index.html"
+			],
+			[
+				"nav",
+				"client\\components\\navbar\\navbar.jade"
+			],
+			[
+				"bower",
+				"bower.json"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 195.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
