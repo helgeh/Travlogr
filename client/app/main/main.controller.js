@@ -3,17 +3,92 @@
 angular.module('travlogrApp')
   .controller('MainCtrl', function ($scope, $http, CONFIG, Gmaps, Travels, panels, $q) {
     
-  	// var map; we don't really need a reference to the map here, let Gmaps do the work
+    $scope.map = {
+      center: {
+        latitude: 38.267, 
+        longitude: 13.406
+      }, 
+      zoom: 3, 
+      bounds: {}
+    };
+    $scope.options = {
+      scrollwheel: false
+    };
+    $scope.someMarkers = [];
 
-    $scope.map = { center: { latitude: 38.267, longitude: 13.406 }, zoom: 3 };
+    // var createRandomMarker = function(i, bounds, idKey) {
+    //   var lat_min = bounds.southwest.latitude,
+    //     lat_range = bounds.northeast.latitude - lat_min,
+    //     lng_min = bounds.southwest.longitude,
+    //     lng_range = bounds.northeast.longitude - lng_min;
 
-  	Gmaps.getMap().then(function (map) {
-  		// map = map;
-  		// initTravelDestinations();
+    //   if (idKey == null) {
+    //     idKey = "id";
+    //   }
 
-      //open testmenu panel
-      // panels.open("right_panel");
-  	});
+    //   var latitude = lat_min + (Math.random() * lat_range);
+    //   var longitude = lng_min + (Math.random() * lng_range);
+    //   var ret = {
+    //     latitude: latitude,
+    //     longitude: longitude,
+    //     title: 'm' + i
+    //   };
+    //   ret[idKey] = i;
+    //   return ret;
+    // };
+
+    $scope.$watch("map.bounds", function(nv, ov) {
+      // Only need to regenerate once
+      // if (!ov.southwest && nv.southwest) {
+        // var markers = [];
+        // for (var i = 0; i < 50; i++) {
+        //   markers.push(createRandomMarker(i, $scope.map.bounds))
+        // }
+        // $scope.someMarkers = markers;
+        // var marker = {
+        //   latitude: 20.123,
+        //   longitude: -9.921,
+        //   title: 'm1',
+        //   id: 0
+        // };
+        // var markers = [marker];
+        // $scope.someMarkers = markers;
+        // var markers = [], i = 0;
+        // _.each(Travels.getTravels(), function (travel) {
+        //   _.each(travel.points, function (point) {
+        //     point.id = i++;
+        //     markers.push(point);
+        //   });
+        // });
+        // $scope.someMarkers = markers;
+        var i = 0, curPoint, prevPoint;
+        var travels = _.map(Travels.getTravels(), function (travel) {
+          curPoint = travel.points[0];
+          travel.lines = _.map(travel.points.slice(1), function (p) {
+            prevPoint = curPoint;
+            curPoint = p;
+            return {
+              id: i++,
+              path: [prevPoint, curPoint],
+              stroke: {
+                color: '#6060FB',
+                weight: 3
+              }
+            }
+          });
+          return travel;
+        });
+        $scope.travels = travels;
+      // }
+    }, true);
+
+  	// Gmaps.getMap().then(function (map) {
+  	// 	// map = map;
+  	// 	initTravelDestinations();
+
+   //    //open testmenu panel
+   //    // panels.open("right_panel");
+  	// });
 
   	function initTravelDestinations() {
       var travels = Travels.getTravels();

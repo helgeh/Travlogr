@@ -8,12 +8,12 @@ angular.module('travlogrApp')
         title: 'Test-trip',
         home: {
           title: 'Oslo',
-          point: {lat: 59.914084875370634, lng: 10.763668600320795}
+          point: {id: 0, latitude: 59.914084875370634, longitude: 10.763668600320795}
         },
         points: [
-          {lat: 52.370, lng: 4.895}, 
-          {lat: 46.441, lng: 8.391}, 
-          {lat: 36.533, lng: -6.299}
+          {id: 1, latitude: 52.370, longitude: 4.895}, 
+          {id: 2, latitude: 46.441, longitude: 8.391}, 
+          {id: 3, latitude: 36.533, longitude: -6.299}
         ],
         roundtrip: true
       },
@@ -21,11 +21,11 @@ angular.module('travlogrApp')
         title: 'Test-trip 2',
         home: {
           title: 'Oslo',
-          point: {lat: 59.914084875370634, lng: 10.763668600320795}
+          point: {id: 4, latitude: 59.914084875370634, longitude: 10.763668600320795}
         },
         points: [
-          {lat: 20.123, lng: -9.921},
-          {lat: 28.663, lng: -10.245}
+          {id: 5, latitude: 20.123, longitude: -9.921},
+          {id: 6, latitude: 28.663, longitude: -10.245}
         ],
         roundtrip: false
       },
@@ -33,10 +33,10 @@ angular.module('travlogrApp')
         title: 'Test-trip 3 (single destination)',
         home: {
           title: 'Oslo',
-          point: {lat: 59.914084875370634, lng: 10.763668600320795}
+          point: {id: 7, latitude: 59.914084875370634, longitude: 10.763668600320795}
         },
         points: [
-          {lat: 3.444, lng: -56.228}
+          {id: 8, latitude: 3.444, longitude: -56.228}
         ]
       }
     ];
