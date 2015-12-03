@@ -3,8 +3,8 @@ div(ng-include='"components/navbar/navbar.html"')
 div.wrapper
 
   ui-gmap-google-map(center='map.center', zoom='map.zoom')
-    div(ng-repeat="travel in travels")
-      ui-gmap-polylines(models="travel.lines")
-      ui-gmap-markers(models="travel.points", coords="'self'", icon="'icon'")
+    // div(ng-repeat="travel in travels")
+    ui-gmap-polylines(models="travel.points", path="testLines")
+      // ui-gmap-markers(models="travel.points", coords="'self'", icon="'icon'")
 
   div#ui_layer(data-panels='true')
