@@ -12,12 +12,25 @@
     "angular-route": ">=1.2.*",
     "angular-bootstrap": "~0.11.0",
     "font-awesome": ">=4.1.0",
-    "lodash": "~2.4.1",
+    "lodash": ">=3.8.0",
     "google-maps": "~3.1.0",
-    "angular.panels": "https://github.com/eu81273/angular.panels.git#~1.0.3"
+    "angular.panels": "https://github.com/eu81273/angular.panels.git#~1.0.3",
+    "bootstrap-material-design": "~0.5.2"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.js",
+        "dist/css/bootstrap.css",
+        "less/bootstrap.less"
+      ]
+    }
   },
   "devDependencies": {
     "angular-mocks": ">=1.2.*",
     "angular-scenario": ">=1.2.*"
+  },
+  "resolutions": {
+    "bootstrap": "~3.3.5"
   }
 }

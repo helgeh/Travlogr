@@ -4,5 +4,8 @@
 .modal-body
   p(ng-if='modal.text', ng-bind='modal.text')
   div(ng-if='modal.html', ng-bind-html='modal.html')
+  div(ng-if='modal.input')
+    form(name='modal-input-form')
+      input(ng-model='input.title', class='form-control', name='modalinput', placeholder='{{ modal.inputPlaceholder }}')
 .modal-footer
   button.btn(ng-repeat='button in modal.buttons', ng-class='button.classes', ng-click='button.click($event)', ng-bind='button.text')

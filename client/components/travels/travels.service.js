@@ -6,6 +6,8 @@ angular.module('travlogrApp')
     var allTravels = [
       {
         title: 'Test-trip',
+        startTime: 1088760809951,
+        endTime: 1089884009951,
         home: {
           title: 'Oslo',
           point: {lat: 59.914084875370634, lng: 10.763668600320795}
@@ -19,6 +21,8 @@ angular.module('travlogrApp')
       },
       {
         title: 'Test-trip 2',
+        startTime: 1275989609951,
+        endTime: 1276508009951,
         home: {
           title: 'Oslo',
           point: {lat: 59.914084875370634, lng: 10.763668600320795}
@@ -31,6 +35,8 @@ angular.module('travlogrApp')
       },
       {
         title: 'Test-trip 3 (single destination)',
+        startTime: 1391423609951,
+        endTime: 1393238009951,
         home: {
           title: 'Oslo',
           point: {lat: 59.914084875370634, lng: 10.763668600320795}
@@ -42,8 +48,10 @@ angular.module('travlogrApp')
     ];
 
     return {
+      getBirthday: function () {
+        return 314706609117;
+      },
       getTravels: function () {
-        console.log("getting travels...");
         return allTravels;
       }
     };

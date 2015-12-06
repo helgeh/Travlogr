@@ -25,6 +25,53 @@ angular.module('travlogrApp')
     // Public API here
     return {
 
+      input: {
+        getName: function (add) {
+          add = add || angular.noop;
+
+          return function () {
+            var args = Array.prototype.slice.call(arguments),
+                key = args.shift(),
+                // img = args.shift(),
+                // defaults = {title: 'Image Title', src: '/dummy.jpg', alt: 'Dummy alt'},
+                getNameModal;
+            // img = angular.extend(defaults, img);
+
+            var scope = {
+              modal: {
+                dismissable: true,
+                title: 'Add new ' + key,
+                input: true,
+                inputPlaceholder: 'type here...',
+                buttons: [{
+                  classes: 'btn-primary',
+                  text: 'OK',
+                  click: function(e) {
+                    args.push(scope.input.title);
+                    getNameModal.close(e);
+                  }
+                }, {
+                  classes: 'btn-default',
+                  text: 'Cancel',
+                  click: function(e) {
+                    getNameModal.dismiss(e);
+                  }
+                }]
+              },
+              input: {
+                title: ''
+              }
+            };
+
+            getNameModal = openModal(scope);
+            getNameModal.result.then(function(event) {
+              // args.push(scope.input.title);
+              add.apply(event, args);
+            });
+          }
+        }
+      },
+
       /* Confirmation modals */
       confirm: {
 
@@ -74,4 +121,11 @@ angular.module('travlogrApp')
         }
       }
     };
-  });
+  })
+
+.controller('TitleModalCtrl', function TitleModalController ($scope, $modalInstance) {
+                  console.log("TitleModalController instantiated");
+                  $scope.inputChanged = function (event) {
+                    inputTitle = $scope.titleInput;
+                  };
+                });

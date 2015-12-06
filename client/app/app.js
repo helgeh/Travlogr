@@ -3,6 +3,7 @@
 
 /*globals GoogleMapsLoader */
 
+GoogleMapsLoader.LIBRARIES = ['geometry', 'places'];
 
 angular.module('travlogrApp', [
   'ngCookies',

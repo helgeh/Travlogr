@@ -32,3 +32,9 @@
 .navbar-text {
     margin-left: 15px;
 }
+
+.ui {
+    position: absolute;
+    right: 55px;
+    bottom: 25px;
+}

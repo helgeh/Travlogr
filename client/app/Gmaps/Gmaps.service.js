@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('travlogrApp')
-  .factory('Gmaps', function ($window, $q, CONFIG) {
+  .factory('Gmaps', function ($rootScope, $window, $q, CONFIG) {
 
     var google, maps = {}, deferred, promise;
 
@@ -34,6 +34,55 @@ angular.module('travlogrApp')
       _.extend(config, options);
       var map = new google.maps.Map(document.getElementById(config.mapId), config);
       window.map = map;
+
+
+      var input = document.getElementById('pac-input');
+      var searchBox = new google.maps.places.SearchBox(input);
+      // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+      // Bias the SearchBox results towards current map's viewport.
+      map.addListener('bounds_changed', function() {
+        searchBox.setBounds(map.getBounds());
+      });
+
+      searchBox.addListener('places_changed', function(e) {
+        console.log(e);
+        var places = searchBox.getPlaces();
+        if (places.length === 0) 
+          return;
+        $rootScope.$emit('search:places', places);
+        return;
+
+        console.log(places);
+        // For each place, get the icon, name and location.
+        var bounds = new google.maps.LatLngBounds();
+        places.forEach(function(place) {
+          var icon = {
+            url: place.icon,
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
+          };
+          // Create a marker for each place.
+          if (!getMarkerFromPoint(place.geometry.location))
+            addMarker(place.geometry.location);
+          if (place.geometry.viewport) {
+            // Only geocodes have viewport.
+            bounds.union(place.geometry.viewport);
+            map.fitBounds(bounds);
+          } 
+    //       else {
+    //         bounds.extend(place.geometry.location);
+    //       }
+    //       map.fitBounds(bounds);
+        });
+      });
+      
+      // google.maps.event.addListener(map, 'click', function(e) {
+      //   console.log(e.latLng.lat());
+      //   addPoint(e.latLng);
+      // });
       maps[config.mapId] = {map: map};
       return config.mapId;
     }
@@ -62,6 +111,17 @@ angular.module('travlogrApp')
       return deferred.promise;
     }
 
+    function listenFor(event, callback) {
+      promise.then(function (map) {
+        google.maps.event.addListener(map, event, callback);
+      });
+    }
+
+    function onSearch(scope, callback) {
+      var handler = $rootScope.$on('search:places', callback);
+      scope.$on('$destroy', handler);
+    }
+
 
     /////    MARKERS
 
@@ -69,6 +129,7 @@ angular.module('travlogrApp')
     var icons = {};
 
     function addPoint(latLng, options) {
+      options = options || {};
       var markerId = createMarkerId(latLng); // an that will be used to cache this marker in markers object.
       if (markers[markerId])
         return markerId;
@@ -94,22 +155,26 @@ angular.module('travlogrApp')
     }
 
     function createMarkerId (latLng) {
+      if (typeof latLng.lat === 'function')
+        return latLng.lat() + "_" + latLng.lng();
       return latLng.lat + "_" + latLng.lng;
     }
 
 
     /////    POLYLINES
 
-    function draw(path) {
+    function draw(path, options) {
+      var config = {
+        path: path,
+        geodesic: true,
+        strokeColor: '#FF0000',
+        strokeOpacity: 1.0,
+        strokeWeight: 2
+      };
+      options = options || {};
+      _.merge(config, options);
       promise.then(function (map) {
-        var flightPath = new google.maps.Polyline({
-          path: path,
-          geodesic: true,
-          strokeColor: '#FF0000',
-          strokeOpacity: 1.0,
-          strokeWeight: 2
-        });
-
+        var flightPath = new google.maps.Polyline(config);
         flightPath.setMap(map);
       });
     }
@@ -118,6 +183,8 @@ angular.module('travlogrApp')
     return {
       // addMap: addMap,
       getMap: getMap,
+      listenFor: listenFor,
+      onSearch: onSearch,
       addPoint: addPoint,
       draw: draw
     };
