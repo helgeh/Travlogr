@@ -50,9 +50,18 @@ html, body, div[ng-view], .wrapper, .map_canvas {
 
 .wrapper {
     position: relative;
-    padding-top: 51px;
+    padding-top: 60px;
+    box-sizing: border-box;
+}
+@media (max-width: 1199px) {
+    .wrapper {
+        padding-top: 50px;
+    }
 }
 
+.pac-container {
+    z-index: 9999;
+}
 
 /*  -------     BOOTSTRAP OVERRIDES    -------- */
 .navbar {
