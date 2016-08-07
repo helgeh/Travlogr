@@ -5,9 +5,13 @@ div.wrapper
   div#map_canvas.map_canvas
 
   div.ui
-    button.btn.btn-info.btn-fab(ng-click='addNewTrip("trip")')
+    button.btn.btn-info.btn-fab(ng-click='addNewTrip("trip")', data-style='toast', data-content='This is a toast! Lorem lipsum dolor sit amet...', data-toggle='snackbar', data-timeout='0')
       i.material-icons
         | add
         .ripple-container
 
   div#ui_layer(data-panels='true')
+
+  div.snackbar-container(data-snackbar="true")
+    div#snackbar1.snackbar.toast
+      span.snackbar-content

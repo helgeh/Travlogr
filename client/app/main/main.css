@@ -38,3 +38,8 @@
     right: 55px;
     bottom: 25px;
 }
+.snackbar-container {
+    position: absolute;
+    bottom: 25px;
+    left: 35px;
+}

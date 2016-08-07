@@ -13,6 +13,7 @@ angular.module('travlogrApp')
 
     function addNewTrip(name) {
       $scope.travel.title = name;
+      $scope.snackbar = true;
     }
 
     // var askForTitle = Modal.input.title(function() {
